@@ -17,13 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttt_board.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-H9-nnp">
-                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Iz-0f-0k9">
+                                <rect key="frame" x="20" y="169" width="83" height="83"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="U29-lo-k3m"/>
-                                    <constraint firstAttribute="width" constant="375" id="lrE-lg-5oU"/>
+                                    <constraint firstAttribute="height" constant="83" id="4ub-7E-WYP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="Vsp-hQ-Hv2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="83" id="XPu-37-3hp"/>
+                                    <constraint firstAttribute="width" constant="83" id="vaK-zb-2Sy"/>
                                 </constraints>
-                            </imageView>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKp-W1-vX3"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPy-ER-dBy">
                                 <rect key="frame" x="110" y="60" width="154" height="53"/>
                                 <color key="backgroundColor" red="0.2110731948" green="0.74739856599999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,18 +134,13 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ynd-F2-yDy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Iz-0f-0k9">
-                                <rect key="frame" x="20" y="169" width="83" height="83"/>
+                            <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttt_board.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-H9-nnp">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="4ub-7E-WYP"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="Vsp-hQ-Hv2"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="83" id="XPu-37-3hp"/>
-                                    <constraint firstAttribute="width" constant="83" id="vaK-zb-2Sy"/>
+                                    <constraint firstAttribute="height" constant="375" id="U29-lo-k3m"/>
+                                    <constraint firstAttribute="width" constant="375" id="lrE-lg-5oU"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKp-W1-vX3"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdA-Hb-Sed">
                                 <rect key="frame" x="38" y="184" width="299" height="299"/>
                                 <color key="backgroundColor" red="1" green="0.14262414070000001" blue="0.22711989539999999" alpha="1" colorSpace="calibratedRGB"/>

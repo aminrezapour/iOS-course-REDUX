@@ -77,21 +77,42 @@ class ViewController: UIViewController {
                         winLabel.text = "cross wins"
                     }
                 
-                    winLabel.hidden = false
-                    UIView.animateWithDuration(1, animations: { () -> Void in
-                        self.winLabel.center = CGPointMake(self.winLabel.center.x + 500, self.winLabel.center.y)
-                    })
-                    
-                    playAgain.hidden = false
-                    UIView.animateWithDuration(1, animations: { () -> Void in
-                        self.playAgain.center = CGPointMake(self.playAgain.center.x + 500, self.playAgain.center.y)
-                    })
+                    endGame()
 
                 
                 }
             }
             
+            if gameActive {
+                gameActive = false
+            
+                for x in boardState {
+                    if x == 0 {
+                        gameActive = true
+                    }
+                }
+                
+                if !gameActive {
+                    winLabel.text = "It's a draw"
+                    endGame()
+                }
+            }
+            
         }
+        
+    }
+    
+    func endGame() {
+        
+        winLabel.hidden = false
+        UIView.animateWithDuration(1, animations: { () -> Void in
+            self.winLabel.center = CGPointMake(self.winLabel.center.x + 500, self.winLabel.center.y)
+        })
+        
+        playAgain.hidden = false
+        UIView.animateWithDuration(1, animations: { () -> Void in
+            self.playAgain.center = CGPointMake(self.playAgain.center.x + 500, self.playAgain.center.y)
+        })
         
     }
     
