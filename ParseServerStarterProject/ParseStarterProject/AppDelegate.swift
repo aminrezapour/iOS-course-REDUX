@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
             ParseMutableClientConfiguration.applicationId = "myAppId8763KJHKJBdapq"
-            ParseMutableClientConfiguration.clientKey = "myMasterKey91923kjADKJAsdmbv$asA"
+            ParseMutableClientConfiguration.clientKey = "myMasterKey91923kjADKJAsdmbvasA"
             ParseMutableClientConfiguration.server = "https://instagram-21.herokuapp.com/parse"
         })
         
