@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="width" constant="165" id="eGb-9i-pOJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="IT6-4I-HMk">
                                 <rect key="frame" x="105" y="189" width="165" height="30"/>
@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="width" constant="165" id="9yO-ne-tX9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hr4-zO-77F">
                                 <rect key="frame" x="141" y="235" width="92" height="30"/>
@@ -63,6 +63,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPv-sz-SUq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuN-w5-8XH">
                                 <rect key="frame" x="166" y="273" width="42" height="21"/>
@@ -85,12 +88,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4th-Vc-Tc3">
-                                <rect key="frame" x="253" y="284" width="47" height="30"/>
+                                <rect key="frame" x="253" y="284" width="67" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AKi-W5-FDH"/>
-                                    <constraint firstAttribute="width" constant="47" id="cck-3J-yJq"/>
+                                    <constraint firstAttribute="width" constant="67" id="cck-3J-yJq"/>
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signChangeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2c-36-E4f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -114,6 +120,13 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="password" destination="IT6-4I-HMk" id="AC2-to-Fdz"/>
+                        <outlet property="signButton" destination="hr4-zO-77F" id="AOD-bj-egI"/>
+                        <outlet property="signCahnge" destination="4th-Vc-Tc3" id="Bo4-SZ-Scq"/>
+                        <outlet property="signMessage" destination="DiL-h6-XZ9" id="Fwp-hw-7RE"/>
+                        <outlet property="username" destination="n4L-tY-dOr" id="Cg9-a7-FNx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
