@@ -14,9 +14,10 @@ class TableViewController: UITableViewController {
     var usernames = [""]
     var userids = [""]
     var isFollowing = ["":false]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    var refresher: UIRefreshControl!
+    
+    func refresh() {
         
         let query = PFUser.query()
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
@@ -32,7 +33,7 @@ class TableViewController: UITableViewController {
                     if let user = object as? PFUser {
                         
                         if user.objectId != PFUser.currentUser()?.objectId {
-                        
+                            
                             self.usernames.append(user.username!)
                             self.userids.append(user.objectId!)
                             
@@ -46,13 +47,13 @@ class TableViewController: UITableViewController {
                                 if let objects = objects {
                                     
                                     if objects.count > 0 {
-                                    
+                                        
                                         self.isFollowing[user.objectId!] = true
-                                    
+                                        
                                     } else {
-                                    
+                                        
                                         self.isFollowing[user.objectId!] = false
-                                    
+                                        
                                     }
                                 }
                                 
@@ -60,10 +61,12 @@ class TableViewController: UITableViewController {
                                     
                                     self.tableView.reloadData()
                                     
+                                    self.refresher.endRefreshing()
+                                    
                                 }
                             })
                         }
-                    
+                        
                     }
                     
                 }
@@ -71,11 +74,18 @@ class TableViewController: UITableViewController {
             }
         })
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.tableView.addSubview(refresher)
+        
+        refresh()
         
     }
 
