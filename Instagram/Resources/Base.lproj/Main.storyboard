@@ -5,10 +5,55 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
+        <!--User List-->
+        <scene sceneID="Rsm-Fg-6n7">
+            <objects>
+                <tableViewController id="w3d-4L-ybc" customClass="TableViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vh6-FD-roK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="yFF-Wi-FEx">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yFF-Wi-FEx" id="fQW-nB-qnQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="w3d-4L-ybc" id="fmk-MH-wfq"/>
+                            <outlet property="delegate" destination="w3d-4L-ybc" id="WuU-0q-hmF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="User List" id="AfO-2l-Tuw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qld-Cr-rHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019.5" y="-937.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o54-uw-VU1">
+            <objects>
+                <navigationController id="onI-Bc-feR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5Z-rG-P1x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="w3d-4L-ybc" kind="relationship" relationship="rootViewController" id="fr5-vu-yO3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QgT-mY-Iu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544" y="-937"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagram_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -126,11 +171,12 @@
                         <outlet property="signCahnge" destination="4th-Vc-Tc3" id="Bo4-SZ-Scq"/>
                         <outlet property="signMessage" destination="DiL-h6-XZ9" id="Fwp-hw-7RE"/>
                         <outlet property="username" destination="n4L-tY-dOr" id="Cg9-a7-FNx"/>
+                        <segue destination="onI-Bc-feR" kind="show" identifier="login" id="edM-dM-hRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216.5" y="267.5"/>
+            <point key="canvasLocation" x="58.5" y="-937.5"/>
         </scene>
     </scenes>
 </document>
