@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--User List-->
@@ -28,11 +29,93 @@
                             <outlet property="delegate" destination="w3d-4L-ybc" id="WuU-0q-hmF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="User List" id="AfO-2l-Tuw"/>
+                    <navigationItem key="navigationItem" title="User List" id="AfO-2l-Tuw">
+                        <barButtonItem key="rightBarButtonItem" title="Post New" id="rxc-sj-cfe">
+                            <connections>
+                                <segue destination="9my-xF-hXL" kind="show" id="wot-xu-03Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qld-Cr-rHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1019.5" y="-937.5"/>
+        </scene>
+        <!--Post Image-->
+        <scene sceneID="ebJ-WD-l0o">
+            <objects>
+                <viewController title="Post Image" id="9my-xF-hXL" customClass="PostImageViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0j-AD-nYr"/>
+                        <viewControllerLayoutGuide type="bottom" id="uLT-VZ-KCA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GJL-G8-4RR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.png" translatesAutoresizingMaskIntoConstraints="NO" id="bRF-8e-gB2">
+                                <rect key="frame" x="62" y="97" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="L7s-Ww-Sq9"/>
+                                    <constraint firstAttribute="height" constant="250" id="aJ8-Pe-qVQ"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gs-rD-qkO">
+                                <rect key="frame" x="20" y="418" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ba-5I-LHy">
+                                <rect key="frame" x="129" y="373" width="116" height="30"/>
+                                <color key="backgroundColor" red="0.2110731948" green="0.74739856599999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bhi-u1-EiC"/>
+                                    <constraint firstAttribute="width" constant="116" id="vmT-hX-fPs"/>
+                                </constraints>
+                                <state key="normal" title="Choose Photo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseImage:" destination="9my-xF-hXL" eventType="touchUpInside" id="pGG-5x-4Ix"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPr-kE-uc1">
+                                <rect key="frame" x="151" y="470" width="73" height="66"/>
+                                <color key="backgroundColor" red="0.21091240922935767" green="0.82982165404040398" blue="0.1295065172625979" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="ZgR-Ce-9fj"/>
+                                    <constraint firstAttribute="width" constant="73" id="pIu-nV-6Zl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postImage:" destination="9my-xF-hXL" eventType="touchUpInside" id="aY2-08-aDH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bRF-8e-gB2" firstAttribute="top" secondItem="N0j-AD-nYr" secondAttribute="bottom" constant="33" id="5Wz-iN-2ux"/>
+                            <constraint firstItem="2gs-rD-qkO" firstAttribute="leading" secondItem="GJL-G8-4RR" secondAttribute="leadingMargin" id="Bxq-O4-usw"/>
+                            <constraint firstItem="8Ba-5I-LHy" firstAttribute="centerX" secondItem="GJL-G8-4RR" secondAttribute="centerX" id="Ozm-rj-52J"/>
+                            <constraint firstItem="PPr-kE-uc1" firstAttribute="centerX" secondItem="GJL-G8-4RR" secondAttribute="centerX" id="SL4-j3-F6w"/>
+                            <constraint firstItem="PPr-kE-uc1" firstAttribute="top" secondItem="2gs-rD-qkO" secondAttribute="bottom" constant="22" id="be3-Lh-0Fr"/>
+                            <constraint firstItem="2gs-rD-qkO" firstAttribute="trailing" secondItem="GJL-G8-4RR" secondAttribute="trailingMargin" id="eop-rA-XSt"/>
+                            <constraint firstItem="bRF-8e-gB2" firstAttribute="centerX" secondItem="GJL-G8-4RR" secondAttribute="centerX" id="h9p-QM-RNG"/>
+                            <constraint firstItem="8Ba-5I-LHy" firstAttribute="top" secondItem="bRF-8e-gB2" secondAttribute="bottom" constant="26" id="pFb-T0-lNP"/>
+                            <constraint firstItem="2gs-rD-qkO" firstAttribute="top" secondItem="8Ba-5I-LHy" secondAttribute="bottom" constant="15" id="xGG-BN-123"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageCaption" destination="2gs-rD-qkO" id="fUL-yn-mZk"/>
+                        <outlet property="imageToPost" destination="bRF-8e-gB2" id="BV1-DG-g5h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3K-wb-1eG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464.5" y="-937.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o54-uw-VU1">
@@ -179,4 +262,7 @@
             <point key="canvasLocation" x="58.5" y="-937.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default.png" width="256" height="256"/>
+    </resources>
 </document>
