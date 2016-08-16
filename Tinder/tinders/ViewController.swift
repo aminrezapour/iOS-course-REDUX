@@ -30,7 +30,9 @@ class ViewController: UIViewController {
             } else {
                 
                 if user != nil {
-                    print(user)
+
+                    self.performSegueWithIdentifier("showSignIn", sender: self)
+                    
                 }
                 
             }
@@ -50,6 +52,16 @@ class ViewController: UIViewController {
 //            print("Object has been saved.")
 //        }
         
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+
+        if let username = PFUser.currentUser()?.username {
+        
+            performSegueWithIdentifier("showSignIn", sender: self)
+            
+        }
         
     }
 
