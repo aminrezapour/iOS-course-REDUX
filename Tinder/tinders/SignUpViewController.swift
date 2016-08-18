@@ -33,6 +33,46 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let urlArray = ["http://weknowyourdreams.com/images/girl/girl-03.jpg",
+//        "https://pbs.twimg.com/profile_images/739247958340698114/fVKY9fOv.jpg",
+//        "http://www.telegraph.co.uk/content/dam/news/2016/05/18/98358303_dagmara-large_trans++qVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg",
+//        "http://weknowyourdreams.com/images/girl/girl-06.jpg",
+//        "http://weknowyourdreams.com/images/girl/girl-04.jpg"]
+//        
+//        var counter = 1
+//        
+//        for url in urlArray {
+//            
+//            let nsUrl = NSURL(string: url)!
+//            
+//            if let data = NSData(contentsOfURL: nsUrl) {
+//                
+//                let imageFile: PFFile = PFFile(data: data)!
+//                
+//                var user: PFUser = PFUser()
+//                user["image"] = imageFile
+//                
+//                user.username = "user\(counter)"
+//                user.password = "pass"
+//                user["interestedInWoman"] = false
+//                user["gender"] = "female"
+//                
+//                counter++
+//                
+//                do {
+//                    try user.signUp()
+//
+//                } catch {
+//                    
+//                }
+//                
+//            }
+        
+//        }
+        
+        
+        
 
         // Do any additional setup after loading the view.
         
