@@ -29,16 +29,25 @@ class ViewController: UIViewController {
                 
             } else {
                 
-                if user != nil {
+                if let user = user {
+                    
+                    if let interestedInWoman = user["interestedInWoman"] {
+                        
+                        self.performSegueWithIdentifier("showSwipe", sender: self)
+                        
+                    } else {
+                        
+                        self.performSegueWithIdentifier("showSignIn", sender: self)
+                        
+                    }
 
-                    self.performSegueWithIdentifier("showSignIn", sender: self)
+                    
                     
                 }
                 
             }
         }
         
-        print(PFUser.currentUser()?.objectId)
 
     }
 
@@ -52,15 +61,22 @@ class ViewController: UIViewController {
 //            print("Object has been saved.")
 //        }
         
-        
     }
     
     override func viewDidAppear(animated: Bool) {
-
-        if let username = PFUser.currentUser()?.username {
         
-            performSegueWithIdentifier("showSignIn", sender: self)
-            
+        if let user = PFUser.currentUser() {
+        
+            if let interestedInWoman = user["interestedInWoman"] {
+                
+                performSegueWithIdentifier("showSwipe", sender: self)
+                
+            } else {
+                
+                performSegueWithIdentifier("showSignIn", sender: self)
+                
+            }
+        
         }
         
     }
